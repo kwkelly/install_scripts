@@ -1,7 +1,8 @@
 #!/bin/bash
 
-INSTALL_DIR=$WORK/packages/elemental2
-TOOLCHAIN=$WORK/downloads/Maverick-intel-impi-mkl.cmake
+INSTALL_DIR=$WORK/packages/elemental
+THIS_DIR=$(pwd)
+TOOLCHAIN=$THIS_DIR/Maverick-intel-impi-mkl.cmake
 DEV=false
 
 if [ "$DEV" = true ] ; then
