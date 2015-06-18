@@ -11,9 +11,9 @@ set -e
 PREFIX_ROOT=$WORK/packages/tmux
 
 # Links to the dependencies. May need to be updates in the future
-TMUX_LINK=http://sourceforge.net/projects/tmux/files/tmux/tmux-1.9/tmux-1.9a.tar.gz/download
+TMUX_LINK=https://github.com/tmux/tmux/releases/download/2.0/tmux-2.0.tar.gz
 LIBEVENT_LINK=https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz
-if [ $(uname) == 'Darwin' ];
+if [ $(uname) == 'Darwin' ]; #link for os x is different than what is used for linux
 then
 	NCURSES_LINK=ftp://invisible-island.net/ncurses/current/ncurses-5.9-20150329.tgz
 else
