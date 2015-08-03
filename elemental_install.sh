@@ -2,8 +2,8 @@
 
 INSTALL_DIR=$WORK/packages/elemental
 THIS_DIR=$(pwd)
-TOOLCHAIN=$THIS_DIR/Maverick-intel-impi-mkl.cmake
-DEV=false
+TOOLCHAIN=$THIS_DIR/Stampede-intel-impi-mkl.cmake
+DEV=true
 
 if [ "$DEV" = true ] ; then
 	git clone git://github.com/elemental/Elemental.git elemental
@@ -18,6 +18,6 @@ cd elemental
 mkdir build
 cd build
 
-cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR -DINSTALL_PYTHON_PACKAGE=FALSE ..
+cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR -DINSTALL_PYTHON_PACKAGE=FALSE -DCMAKE_INSTALL_RPATH=$INSTALL_DIR/lib -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=TRUE ..
 
 make install
