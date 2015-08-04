@@ -5,7 +5,7 @@ set(CMAKE_CXX_COMPILER     ${COMPILER_DIR}/icpc)
 set(CMAKE_Fortran_COMPILER ${COMPILER_DIR}/ifort)
 
 # The MPI wrappers for the C and C++ compilers
-set(MPI_COMPILER_DIR /opt/apps/intel14/mvapich2/2.0b/bin)
+set(MPI_COMPILER_DIR /opt/apps/intel14/impi/4.1.3.049/intel64/bin)
 set(MPI_C_COMPILER       ${MPI_COMPILER_DIR}/mpicc)
 set(MPI_CXX_COMPILER     ${MPI_COMPILER_DIR}/mpicxx)
 set(MPI_Fortran_COMPILER ${MPI_COMPILER_DIR}/mpif90)
