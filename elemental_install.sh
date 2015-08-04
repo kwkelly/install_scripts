@@ -3,7 +3,7 @@
 INSTALL_DIR=$WORK/packages/elemental
 THIS_DIR=$(pwd)
 TOOLCHAIN=$THIS_DIR/Maverick-intel-impi-mkl.cmake
-DEV=false
+DEV=true
 
 if [ "$DEV" = true ] ; then
 	git clone git://github.com/elemental/Elemental.git elemental
