@@ -3,7 +3,11 @@
 INSTALL_DIR=$HOME/packages/elemental
 CMAKE_BIN_DIR=$HOME/packages/cmake/bin/ # can be left blank if on system path
 THIS_DIR=$(pwd)
+<<<<<<< HEAD
 TOOLCHAIN=$THIS_DIR/ronaldo.cmake
+=======
+TOOLCHAIN=$THIS_DIR/Maverick-intel-impi-mkl.cmake
+>>>>>>> 268b32feda6c2e585489d8fc8cf2724e28f56e9a
 DEV=true
 
 if [ "$DEV" = true ] ; then
@@ -19,6 +23,6 @@ cd elemental
 mkdir build
 cd build
 
-${CMAKE_BIN_DIR}cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR -DINSTALL_PYTHON_PACKAGE=FALSE ..
+${CMAKE_BIN_DIR}cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR -DINSTALL_PYTHON_PACKAGE=FALSE -DCMAKE_INSTALL_RPATH=$INSTALL_DIR/lib -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=TRUE ..
 
 make install
