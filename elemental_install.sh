@@ -1,9 +1,10 @@
 #!/bin/bash
 
-INSTALL_DIR=$WORK/packages/elemental
+INSTALL_DIR=$HOME/packages/elemental
+CMAKE_BIN_DIR=$HOME/packages/cmake/bin/ # can be left blank if on system path
 THIS_DIR=$(pwd)
-TOOLCHAIN=$THIS_DIR/Maverick-intel-impi-mkl.cmake
-DEV=false
+TOOLCHAIN=$THIS_DIR/ronaldo.cmake
+DEV=true
 
 if [ "$DEV" = true ] ; then
 	git clone git://github.com/elemental/Elemental.git elemental
@@ -18,6 +19,6 @@ cd elemental
 mkdir build
 cd build
 
-cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR -DINSTALL_PYTHON_PACKAGE=FALSE ..
+${CMAKE_BIN_DIR}cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR -DINSTALL_PYTHON_PACKAGE=FALSE ..
 
 make install
